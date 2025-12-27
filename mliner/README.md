@@ -79,7 +79,7 @@ python manage.py migrate
 Bash
 
 python manage.py runserver
-Visit http://127.0.0.1:8000 in your browser to start shortening links.
+Visit http://127.0.0.1:8007 in your browser to start shortening links.
 
 🗺 Future Roadmap
 [ ] Add Analytics (Count clicks per link).

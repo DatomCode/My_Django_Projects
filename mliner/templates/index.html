@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mliner | Shorten URLs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="container">
+        <h1><i class="fa-solid fa-link"></i> Mliner</h1>
+        <p>Shorten your links, expand your reach.</p>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="url" name="long_url" placeholder="Paste your long link here..." required>
+            </div>
+            <button type="submit" class="btn-submit">Shorten URL <i class="fa-solid fa-wand-magic-sparkles"></i></button>
+        </form>
+
+        {% if new_url %}
+        <div class="result-box">
+            <a href="{{ new_url }}" class="short-link" id="shortUrl" target="_blank">{{ new_url }}</a>
+            <button class="copy-btn" onclick="copyToClipboard()">
+                <i class="fa-regular fa-copy"></i> Copy
+            </button>
+        </div>
+        {% endif %}
+
+        <div class="footer">
+           <div class="social-links">
+            <a href="https://www.linkedin.com/in/gbadeboenoch/" target="_blank" title="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://www.tiktok.com/@datom_code" target="_blank" title="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://github.com/DatomCode" target="_blank" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+
+        <div class="footer">
+            Built by <a href="https://www.linkedin.com/in/gbadeboenoch/" target="_blank">Gbadebo Enoch</a>
+        </div>
+    </div> 
+        </div>
+    </div>
+
+    
+</body>
+</html>
