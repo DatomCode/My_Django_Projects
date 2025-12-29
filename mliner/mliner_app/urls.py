@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import redirect
+from .views import redirect_link, home
 
 urlpatterns = [
-    path("", redirect, name='index'),
+    path("", home, name='home'),
+    path('<str:shortened_link>/', redirect_link, name='redirect'),
 ]
