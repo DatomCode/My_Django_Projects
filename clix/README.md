@@ -1,6 +1,6 @@
-# Mliner | URL Shortener
+# clix | URL Shortener
 
-**Mliner** is a clean, efficient URL shortening application built with Django. It takes long, complex URLs and converts them into short, shareable 8-character codes.
+**clix** is a clean, efficient URL shortening application built with Django. It takes long, complex URLs and converts them into short, shareable 8-character codes.
 
 The project focuses on simplicity, speed, and a modern user interface.
 
@@ -25,8 +25,8 @@ Follow these steps to run the project locally on your machine.
 
 ## 1. Clone the Repository
 ```bash
-git clone [https://github.com/DatomCode/mliner.git](https://github.com/DatomCode/mliner.git)
-cd mliner
+git clone [https://github.com/DatomCode/My_Django_Projects/tree/main/clix](https://github.com/DatomCode/My_Django_Projects/tree/main/clix)
+cd clix
 ```
 
 ## 2. Create a Virtual Environment
