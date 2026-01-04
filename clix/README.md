@@ -4,7 +4,7 @@
 
 The project focuses on simplicity, speed, and a modern user interface.
 
-## 🚀 Features
+##  Features
 
 * **Instant Shortening:** Generates unique 8-character codes using UUID logic.
 * **Smart Redirection:** Instantly redirects users from the short link to the original URL.
@@ -12,14 +12,14 @@ The project focuses on simplicity, speed, and a modern user interface.
 * **Responsive Design:** Works seamlessly on desktop and mobile devices.
 * **Duplicate Prevention:** Checks for existing short codes to ensure uniqueness.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * **Backend:** Python 3, Django 6.0
 * **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
 * **Database:** SQLite (Default)
 * **Styling:** Custom CSS + FontAwesome Icons
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
 Follow these steps to run the project locally on your machine.
 
@@ -62,7 +62,7 @@ Open your browser and visit: http://127.0.0.1:8000
 
 
 
-## 📝 Usage
+##  Usage
 Paste a long URL into the input field (e.g., https://www.google.com/search?q=django).
 
 Click the "Shorten URL" button.
