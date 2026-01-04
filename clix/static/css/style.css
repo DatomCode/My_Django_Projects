@@ -1,0 +1,205 @@
+:root {
+
+    
+    --glass-bg: rgba(54, 75, 69, 0.824); 
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-color: #ffffff;
+    --primary-color:#fc560a;
+    --glow-color:#fc560a4d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: var(--primary-color);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Floating Orbs - NEW COLORS */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    animation: float 10s infinite alternate;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(30px, 50px); }
+}
+
+/* Main Card */
+.container {
+    width: 90%;
+    max-width: 500px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    text-shadow: 0 0 20px var(--glow-color); 
+}
+
+p {
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 30px;
+}
+
+/* Form Styling */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input[type="url"] {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="url"]:focus {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: var(--primary-color); 
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+input[type="url"]::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+button.btn-submit {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px var(--glow-color); 
+}
+
+button.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* Result Section */
+.result-box {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--glow-color);
+    animation: popIn 0.3s ease-out;
+}
+
+.short-link {
+    color: var(--primary-color); /* Pink text for the link */
+    font-weight: 600;
+    text-decoration: none;
+    word-break: break-all;
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+.short-link:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+.copy-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.copy-btn:hover {
+    background: white;
+    color: #000;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer */
+.footer {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.3);
+}
+
+.footer a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.footer a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Social Icons Styling --- */
+.social-links {
+    margin-top: 30px;          
+    margin-bottom: 10px;       
+    display: flex;
+    justify-content: center;   
+    gap: 25px;                 
+}
+
+.social-links a {
+    color: rgba(255, 255, 255); 
+    font-size: 1.5rem;         
+    transition: all 0.3s ease; 
+    display: inline-block;
+}
+
+
+/* Adjust the original footer margin so it sits tighter to the icons */
+.footer {
+    margin-top: 10px; 
+}

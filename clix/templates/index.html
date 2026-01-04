@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clix | Shorten URLs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+    
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h1><i class="fa-solid fa-link"></i> Clix</h1>
+        <p>Shorten your links, expand your reach.</p>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="url" name="original_url" placeholder="Paste your long link here..." required>
+            </div>
+            <button type="submit" class="btn-submit">Shorten URL </button>
+            {% comment %} <i class="fa-solid fa-wand-magic-sparkles"></i> {% endcomment %}
+        </form>
+
+        {% if new_url %}
+        <div class="result-box">
+            <a href="{{ new_url }}" class="short-link" id="shortUrl" target="_blank">{{ new_url }}</a>
+            <button class="copy-btn" onclick="copyToClipboard()">
+                <i class="fa-regular fa-copy"></i> Copy
+            </button>
+        </div>
+        {% endif %}
+
+        <div class="footer">
+           <div class="social-links">
+            <a href="https://www.linkedin.com/in/gbadeboenoch/" target="_blank" title="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://www.tiktok.com/@datom_code" target="_blank" title="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://github.com/DatomCode" target="_blank" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+
+        <div class="footer">
+            Built by <a href="https://www.linkedin.com/in/gbadeboenoch/" target="_blank">Gbadebo Enoch</a>
+        </div>
+    </div> 
+        </div>
+    </div>
+
+    {% comment %} <script>
+    function copyToClipboard() {
+        // 1. Get the URL text
+        const copyText = document.getElementById("shortUrl");
+        const link = copyText.innerText; 
+
+        // 2. Copy to clipboard
+        navigator.clipboard.writeText(link).then(() => {
+            
+            // 3. Visual Success Feedback
+            const copyButton = document.querySelector(".copy-btn");
+            const originalHTML = copyButton.innerHTML;
+
+            // Turn button green and change text
+            copyButton.style.backgroundColor = "#28a745";
+            copyButton.style.color = "#ffffff";
+            copyButton.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            
+            // 4. Reset after 2 seconds
+            setTimeout(() => {
+                copyButton.style.backgroundColor = ""; 
+                copyButton.style.color = ""; 
+                copyButton.innerHTML = originalHTML;
+            }, 2000);
+
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+            alert("Could not copy link automatically. Please copy it manually.");
+        });
+    }
+</script> {% endcomment %}
+</body>
+</html>
