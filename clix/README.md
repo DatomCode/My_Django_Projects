@@ -1,4 +1,4 @@
-# clix | URL Shortener
+# Clix | URL Shortener
 
 **clix** is a clean, efficient URL shortening application built with Django. It takes long, complex URLs and converts them into short, shareable 8-character codes.
 
